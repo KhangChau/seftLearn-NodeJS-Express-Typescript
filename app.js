@@ -17,4 +17,8 @@ const items = [1, [2, [3, [4]]]];
 const handleItems = _.flatMapDeep(items);
 console.log(handleItems);
 
-console.log("something");
+console.log("something just like this");
+
+// because the folder node_modules is not pushed to the repo
+// so people clone this project won't have the package dependencies needed
+// but they can run command npm install to install those needed packages following the package.json(dependencies properties info)

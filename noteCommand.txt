@@ -1,0 +1,22 @@
+download package locally: `npm i <packageName>`
+download package globally: `sudo npm install -g <packageName>`
+download pacage locally in dev mode: `npm i <packageName> -D`
+-----------------------------------------------------------------------
+you can run `npm install` in order to install those needed package dependencies 
+following the package.json
+-----------------------------------------------------------------------
+after config the scripts in package.json
+"dev": "nodemon app.js"
+to run this command, run `npm run dev` not `npm dev` like npm start
+-----------------------------------------------------------------------
+uninstall package dependency by command: `npm uninstall <packageName>`
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+
+
