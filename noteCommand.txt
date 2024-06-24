@@ -1,5 +1,5 @@
 download package locally: `npm i <packageName>`
-download package globally: `sudo npm install -g <packageName>`
+download package globally: `sudo  npm install -g <packageName>`
 download pacage locally in dev mode: `npm i <packageName> -D`
 -----------------------------------------------------------------------
 you can run `npm install` in order to install those needed package dependencies 
@@ -17,6 +17,3 @@ uninstall package dependency by command: `npm uninstall <packageName>`
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
-
-
-
