@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     // res.end(text);
 
     // same size file would be sent
-    // but sent in chunks, not a big file at once
+    // but sent in chunks, not a big file at once 
     const fileStream = fs.createReadStream('./content/bigText.txt', 'utf8');
     fileStream.on('open', () => {
         fileStream.pipe(res)
