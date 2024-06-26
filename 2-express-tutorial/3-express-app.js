@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static('./public'));
 
 // ~~~~~~~~~~~~~~
-// res.sendFile() with the ABSOLUTE pathx
+// res.sendFile() with the ABSOLUTE path
 app.get('/', (req, res) => {
     res.status(200).sendFile(path.resolve(__dirname,  "./navbar-app/index.html"));
 })
