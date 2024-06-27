@@ -1,18 +1,20 @@
 const express = require('express')
 
-const { products } = require('./data.js');
+const { products } = require('../data.js');
 const app = express();
 
 //static file <- public access
-app.use(express.static('./method-public'));
+app.use(express.static('./methods-public'));
 
 app.route('/').get((req, res) => {
     return res.json({msg: 'home page'});
 })
 
+//==================================================================================
 app.route('/api/products').get((req, res) => {
-    return res.json(products)
-    });
+    return res.status(200).json(products)
+})
+//==================================================================================
 
 app.route('/*').get((rep, res) => {
     return res.send(`

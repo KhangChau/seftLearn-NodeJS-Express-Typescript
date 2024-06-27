@@ -1,10 +1,10 @@
 const express = require('express')
 const {log} = require('console')
-const { products } = require('./data.js');
+const { products } = require('../data.js');
 const app = express();
 
 //static file <- public access
-app.use(express.static('./method-public'));
+app.use(express.static('./methods-public'));
 
 app.route('/').get((req, res) => {
     return res.json({msg: 'home page'});
@@ -23,17 +23,13 @@ const login = (req, res, next) => {
     log('accept login!')
     next();
 }
-// // APP.USE() HERE! -> apply all declared middleware(s) for all below routers
-app.use(logger, login);
-// app.use(login, logger);
-
-app.route('/api/products').get((req, res) => {
+app.route('/api/products').get(logger ,(req, res) => {
     // return res.status(404)
     return res.status(200)
               .json(products)
 })
 
-app.route('/api/test-Middleware').get((req, res) => {
+app.route('/api/test-Middleware').get([logger, login], (req, res) => {
     return res.status(200).json({msg: 'test middleware',})
 })
 //==================================================================================
