@@ -1,6 +1,6 @@
 const { createReadStream } = require('fs')
 
-const stream = createReadStream('./content/bigText.txt', {highWaterMark: 9000, encoding: 'utf-8'});
+const stream = createReadStream(' ./content/bigText.txt', {highWaterMark: 9000, encoding: 'utf-8'});
 
 // default-64kb
 // last buffer - remainder
