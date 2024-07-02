@@ -14,6 +14,10 @@ interface Hero extends Human {
   flying(speed: number, height: number): string;
 }
 
+const flyingFunction = (spd: number, hght: number): string => {
+  return `to be flying at height ${hght} with speed at ${spd}`;
+};
+
 const krilin: Hero = {
   _id: "aba1234",
   name: "krilin",
@@ -25,9 +29,7 @@ const krilin: Hero = {
     return `to be eating ${junkFood}`;
   },
   gmail: "krilin@gmail.com",
-  flying: (spd: number, hght: number) => {
-    return `to be flying at height ${hght} with speed at ${spd}`;
-  },
+  flying: flyingFunction,
 };
 const msgFLying: string = krilin.flying(13.4, 5);
 console.log(msgFLying);
