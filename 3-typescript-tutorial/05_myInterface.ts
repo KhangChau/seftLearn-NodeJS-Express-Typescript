@@ -10,13 +10,21 @@ interface Human {
   gmail?: string;
 }
 
-interface Hero extends Human {
+interface EyeLazerAttack {
+  eyeLazerAttack(): void;
+}
+
+interface Hero extends Human, EyeLazerAttack {
   flying(speed: number, height: number): string;
 }
 
 const flyingFunction = (spd: number, hght: number): string => {
   return `to be flying at height ${hght} with speed at ${spd}`;
 };
+
+// // 'Hero' only refers to a type, but is being used as a value here.
+// const hero = new Hero();
+// console.log(hero.name);
 
 const krilin: Hero = {
   _id: "aba1234",
@@ -30,6 +38,9 @@ const krilin: Hero = {
   },
   gmail: "krilin@gmail.com",
   flying: flyingFunction,
+  eyeLazerAttack: () => {
+    console.log("eye lazer attack!!!");
+  },
 };
 const msgFLying: string = krilin.flying(13.4, 5);
 console.log(msgFLying);

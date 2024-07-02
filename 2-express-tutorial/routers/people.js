@@ -1,9 +1,7 @@
 const express = require('express');
 // controllers
 const { getAllPeople, getPersonById, createPerson, updatePerson, deletePerson } = require('../controllers/people.js');
-// simulated data
-const { people } = require('../data.js'); 
-
+x
 const router = express.Router();
 
 //==================================================================================

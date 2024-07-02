@@ -11,8 +11,14 @@ to run this command, run `npm run dev` not `npm dev` like npm start
 -----------------------------------------------------------------------
 uninstall package dependency by command: `npm uninstall <packageName>`
 -----------------------------------------------------------------------
+cmd + shif + p ->  format document
+cmd + s -> activate pretier 
 -----------------------------------------------------------------------
+tsc --init --> create simple typescript config file
 -----------------------------------------------------------------------
+[TYPESCRIPT]
+instance of <type/class> --> true/false
+<method/field> in <type/class> --> true/false
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
