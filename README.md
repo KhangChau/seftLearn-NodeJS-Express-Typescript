@@ -6,10 +6,19 @@
 
 # seftLearn-NodeJS-Express-Typescript - DONE!
 
-NodeJS - DONE!
-Express - DONE!
-(manually import postman-test collection at postman app with file REST API.postman_collection.json)
-nodeJS + express: https://www.youtube.com/watch?v=Oe421EPjeBE&t=17271s
+1. NodeJS - DONE!
+2. Express - DONE!
+   (manually import postman-test collection at postman app with file REST API.postman_collection.json)
+   nodeJS + express: https://www.youtube.com/watch?v=Oe421EPjeBE&t=17271s
 
-Typescript - DONE!
-typescript: https://www.youtube.com/watch?v=30LWjhZzg50
+3. Typescript - DONE!
+   typescript: https://www.youtube.com/watch?v=30LWjhZzg50
+
+---
+
+4. PostgreSQL + Sequelize
+   (remmeber npm install all dependencies following ./4-postgresql/pacage.json)
+   (config URI of postgre database connection at ./database/db.ts)
+
+- cd ./4-postgresql/service
+- npx tsx user.ts

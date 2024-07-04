@@ -1,0 +1,5 @@
+Sequenlize
+built-in methods in Sequenlize are mostly async EXCEPT some like ( 
+    <modelInstance>.built(),
+    <modelInstance>.set(),
+    )
