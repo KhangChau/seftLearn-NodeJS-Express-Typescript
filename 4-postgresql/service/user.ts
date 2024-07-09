@@ -1,7 +1,21 @@
 import { sequelize } from "../database/db";
 import { userGenerator } from "../dataSource/userData";
-import { User } from "../models/user";
+// import { User } from "../models/user";
 import { userPlayAround } from "../final/01-moduleInstance";
+import {
+  deleteAllUser,
+  findAllUsers,
+  findAllUsersByNameAndFavoriteColor,
+  findAllUsersWithNameAndFavoriteColorAndAge,
+  findAllUsers_Complex_ByNameAndIdAndAge,
+  updateUserByField,
+} from "../final/02-moduleQueryBasic";
+import { printNickname } from "../final/04-moduleGetterSetterVirtual";
+import {
+  createFoo,
+  testManyToMany,
+  testOneToMany,
+} from "../final/06-moduleAssociation";
 
 //// MODEL SYNCRHONIZATION
 // User.sync() - This creates the table if it doesn't exist (and does nothing if it already exists)
@@ -10,7 +24,16 @@ import { userPlayAround } from "../final/01-moduleInstance";
 (async () => {
   await sequelize.sync();
   // Code here
-  // userGenerator(); // use to generate data ONLY with empty data
+  // await userGenerator(); // use to generate data ONLY with empty data
   // ========================================================================
-  await userPlayAround();
+  // await findAllUsersByNameAndFavoriteColor();
+  // await findAllUsersWithNameAndFavoriteColorAndAge();
+  // await findAllUsers_Complex_ByNameAndIdAndAge();
+  // await deleteAllUser();
+  // await updateUserByField();
+  // await printNickname();
+  // const user = await User.create()
+
+  // createFoo();
+  testManyToMany();
 })();

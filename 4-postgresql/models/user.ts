@@ -1,12 +1,19 @@
-import { DataTypes, Model } from "sequelize";
+import { Association, DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/db";
+import { Account } from "./account";
+import { Bill } from "./bill";
+import { Project } from "./project";
 
 // CREATE MODEL
-export class User extends Model {
+class User extends Model {
   declare name: string;
   declare favoriteColor: string;
   declare age: number;
   declare cash: number;
+  declare nickname: string;
+  // declare static associations: {
+  //   projects: Association<User, Project>;
+  // };
 }
 User.init(
   {
@@ -17,6 +24,20 @@ User.init(
     },
     age: DataTypes.INTEGER,
     cash: DataTypes.INTEGER,
+
+    //virtual field <- it doesn't exist in model User
+    nickname: {
+      type: DataTypes.VIRTUAL,
+      // setter definition
+      set(value) {
+        throw new Error(`don't try to assign value to virtual field!`);
+      },
+      //getter definition
+      get() {
+        const val: string = `${this.name}_${this.age}-san`;
+        return val;
+      },
+    },
   },
   {
     sequelize, // We need to pass the connection instance
@@ -34,3 +55,23 @@ User.init(
     // updatedAt: "updateTimestamp",
   }
 );
+
+// Association
+
+// User.hasOne(Account);
+// Account.belongsTo(User, {
+//   foreignKey: {
+//     name: "userId",
+//     type: DataTypes.UUID,
+//   },
+// });
+
+User.hasMany(Bill, {
+  foreignKey: "idUser",
+});
+// Bill.belongsTo(User);
+
+Project.belongsToMany(User, { through: "UserProject" });
+User.belongsToMany(Project, { through: "UserProject" });
+
+export { User };
